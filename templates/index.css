@@ -1,0 +1,16 @@
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+th{
+    padding-right: 100px;
+}
+table{
+    width: 100%;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="text" name="MaSp" placeholder="Ma san pham" />
+        <input type="text" name="TenSp" placeholder="Ten san pham" />
+        
+        <input type="submit" value="submit"/>
+    </form>
+    
+    <table border="1">
+        <tr>
+            <th>Ma San Pham</th>
+            <th>Ten San Pham</th>
+            <th>Hanh Dong</th>
+        </tr>
+        <div>
+        <% for(let i=0;i<data.length; i++) {%>
+            <tr>
+                <th><%=data[i].MaSp%></th>
+                <th><%=data[i].TenSp%></th>
+                <th>
+                    <form action="/delete" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="MaSp" value="<%=data[i].MaSp%>"/>
+                        <input type="submit" value="Xoa"/>
+                    </form>
+                </th>
+            </tr>      
+        <%}%>
+        </div>
+    </table>
+</body>
+</html>
